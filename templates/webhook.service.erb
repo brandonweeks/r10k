@@ -7,6 +7,7 @@ Type=simple
 EnvironmentFile=-/etc/sysconfig/webhook
 User=<%= @user %>
 ExecStart=/usr/bin/ruby /usr/local/bin/webhook
+KillMode=process
 
 [Install]
 WantedBy=multi-user.target
