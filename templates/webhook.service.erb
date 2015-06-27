@@ -1,13 +1,12 @@
 [Unit]
-Description=R10K Webhook Service
+Description=r10k Webhook Service
 After=syslog.target network.target
 
 [Service]
-Type=forking
+Type=simple
 EnvironmentFile=-/etc/sysconfig/webhook
 User=<%= @user %>
-ExecStart=/usr/local/bin/webhook
-PIDFile=/var/run/webhook/webhook.pid
+ExecStart=/usr/bin/ruby /usr/local/bin/webhook
 
 [Install]
 WantedBy=multi-user.target
